@@ -7,7 +7,7 @@ def find_index(array, n, k):
     while l <= r:
         m = (l + r) // 2
         if array[m] == k:
-            return m
+            return m + 1
         elif array[m] > k:
             r = m - 1
         else:
@@ -16,13 +16,13 @@ def find_index(array, n, k):
 
 
 def main():
-    n, *array = sys.stdin.readline().strip().split()
-    k, *numbers = sys.stdin.readline().strip().split()
+    n, *array = map(int, sys.stdin.readline().strip().split())
+    k, *numbers = map(int, sys.stdin.readline().strip().split())
     result = []
     for i in range(k):
-        result.append(find_index(numbers[i],))
-    print(array)
-    print(numbers)
+        result.append(find_index(array, n, numbers[i]))
+    for i in result:
+        print(i, end=' ')
 
 
 if __name__ == "__main__":
